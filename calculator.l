@@ -27,34 +27,31 @@ digi()
 {
 if(op==0)
 
-/* atof() is used to convert
-	- the ASCII input to float */
 a=atof(yytext);
 
 else
 {
 b=atof(yytext);
 
-switch(op)
-{
-case 1:a=a+b;
+switch(op){
+	case 1:a=a+b;
+		break;
+
+	case 2:a=a-b;
 	break;
 
-case 2:a=a-b;
-break;
+	case 3:a=a*b;
+	break;
 
-case 3:a=a*b;
-break;
+	case 4:a=a/b;
+	break;
 
-case 4:a=a/b;
-break;
-
-case 5:for(i=a;b>1;b--)
-a=a*i;
-break;
-}
-op=0;
-}
+	case 5:for(i=a;b>1;b--)
+	a=a*i;
+	break;
+	}
+	op=0;
+	}
 }
 
 main(int argv,char *argc[])
